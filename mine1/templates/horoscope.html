@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
+
+<div>
+
+  <header class="main">
+    <center>
+      <h1> Horoscope </h1>
+      <img src="https://cdn.pixabay.com/photo/2018/08/08/07/59/southern-hemisphere-3591534_960_720.jpg" width="600" height="400">
+    </center>
+  </header>
+
+  <center>
+    <div class="major"><br>
+      <h4> 생년월일을 입력하면 별자리 운세를 보여줍니다 </h4><h5>Your Birthday</h5>
+      <form action="/horoscope_result" method="POST">
+        <div class="col">
+          <input type="text" class="form-control"  placeholder="Month" maxlength="2" size="5" name="month">
+          <input type="text" class="form-control"  placeholder="Day" maxlength="2" size="5" name="day">
+          <button type="submit" class="btn btn-primary mt-3">enter</button> 
+        </div>
+      </form>
+    </div>
+  </center>
+</div>
+{% endblock %}

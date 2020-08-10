@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
+
+<div>
+
+	<header class="main">
+		<center>
+			<h1> shopping </h1>
+      <img src="{{ url_for('static', filename='images/naver.png') }}"  width="600" height="300">
+			<h4> 입력하신 키워드의 네이버 쇼핑 기본 검색 결과 목록입니다. </h4>
+		</center>
+	</header>
+
+	<body>
+		<ul>{% for i in range(0, len) %}
+			<li><img src={{ search_list_src[i] }}></li>
+			<li>{{ search_list[i] }}</li>
+			{% endfor %}
+		</ul>
+	</body>
+</div>
+{% endblock %}

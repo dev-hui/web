@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
+
+<div>
+  <header class="main">
+    <center>
+      <h1> news </h1>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Daum_communication_logo.svg/1920px-Daum_communication_logo.svg.png" width="600" height="300">
+    </center>
+  </header>
+
+  <center>
+    <div class="major"><br>
+      <h4>다음 뉴스에서 원하는 키워드를 입력하고 검색된 기사의 헤드라인을 페이지 수에 따라 가져옵니다</h4>
+      <p>Enter KEYWORD and PAGE</p>
+      <form action="/news_result" method="POST">
+        <div class="col">
+          <input type="text" class="form-control" placeholder="KEYWORD" name="input1">
+          <input type="number" class="form-control" placeholder="PAGE" name="input2">
+          <button type="submit" class="btn btn-primary mt-3">확인</button>
+        </div>
+      </form>
+    </div>
+  </center>
+</div>
+{% endblock %}

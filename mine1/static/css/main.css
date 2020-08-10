@@ -1,0 +1,27 @@
+#header {
+    font-family: 'Shadows Into Light', cursive; font-size : 30px;
+  }
+  
+.wrapper {
+  margin: auto;
+  overflow: hidden;  
+  font-family: 'Yeon Sung', cursive; font-size : 18px;
+}
+
+.left {
+  width: 250px;
+  height: auto;
+  padding: 20px;
+  border: 5px solid black;
+  margin: 50px;
+  float : left
+}
+
+.yours {
+  width: 800px;  
+  height: auto;
+  padding: 20px;
+  border: 5px solid black;
+  margin: 50px;  
+  float: left
+}

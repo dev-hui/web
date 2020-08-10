@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
+
+<div>
+
+  <header class="main">
+    <center>
+      <h1> shopping </h1>
+      <img src="{{ url_for('static', filename='images/naver.png') }}"  width="600" height="300">
+      <!-- <img src="https://logoproject-phinf.pstatic.net/20190724_170/1563956772281Fs1AA_PNG/New_M_%EC%9E%85%ED%95%98.png?type=w750" width="600" height="300"> -->
+    </center>
+  </header>
+
+  <center>
+    <div class="major"><br>
+      <h4> 원하는 키워드를 입력하면 크롤링을 통해 네이버 쇼핑의 기본 검색 결과 목록을 보여줍니다 </h4> <br>
+      <p>ENTER STUFF</p>
+      <form action="/shopping_result" method="POST">
+        <div class="col">
+          <input type="text" class="form-control" name="input3">
+          <button type="submit" class="btn btn-primary mt-3">확인</button>
+        </div>
+      </form>
+    </div>
+  </center>
+</div>
+{% endblock %}

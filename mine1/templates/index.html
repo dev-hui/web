@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+
+{% block content %}
+
+<div>
+	<style>
+		.posts {
+			float: left
+		}
+
+		#posts1 {
+			width: 300px;
+			height: 500px;
+			float: left;
+			padding : 5px;
+		}
+
+		#posts2 {
+			width: 300px;
+			height: 500px;
+			float: left;
+			padding : 5px;			
+		}
+
+		#posts3 {
+			width: 300px;
+			height: 500px;
+			float: left;
+			padding : 5px;
+		}
+
+		#wrapper {
+			overflow: hidden;
+		}
+	</style>
+
+	<header class="main">
+		<center>
+      <br>
+			<img src="https://cdn.pixabay.com/photo/2016/02/13/22/52/bracelet-1198740_960_720.jpg" width="440" height="330">
+			<p> 김희조, 초보 개발자. <br> favorite : 영화, 음악, 책, 원석 </p>
+			<a href="/favorite" class="button big">more</a><br>
+		</center>
+	</header>
+
+	<section id="banner">
+		<center>
+
+			<header class="major">
+				<h2> I can work with... </h2><br>
+			</header>
+			<article>
+				<div id="ican1">
+					<h3><i class="fab fa-python"></i> Python</h3>
+					<p> NumPy, Pandas, Matflotlib, Flask, BeautifulSoup</p>
+				</div><br>
+				<div id="ican2">		
+					<h3><i class="fab fa-java"></i> Java</h3>
+					<p> JSP, Spring </p>
+				</div><br>
+				<div id="ican3">
+					<h3><i class="fab fa-html5"></i> Web</h3>
+					<p> this Webpage uses HTML5 + CSS3, Flask <br> 자바스크립트를 이용한 페이지도 구상 중 </p>
+				</div><br>
+				<div id="ican4">					
+					<h3><i class="fas fa-database"></i> Database</h3>
+					<p> Oracle, MySQL </p>
+				</div>
+			</article>
+		</center>
+	</section>
+
+	<section id="banner">
+		<header class="major">
+			<br>
+			<h2> memo </h2>
+		</header>
+		<div class="posts">
+			<article id="posts1">
+				<a href="/blah"><img src="https://cdn.pixabay.com/photo/2018/04/06/23/22/notebook-3297317_960_720.jpg" width="300" height="200"></a>
+				<h3>200520 수요일</h3>
+				<p> 웹페이지 만들기 첫 날! </p>
+				<ul class="actions">
+					<a href="/blah" class="button">More</a>
+				</ul>
+			</article>
+			<article id="posts2">
+				<a href="/blah"><img src="https://cdn.pixabay.com/photo/2018/05/13/17/08/notebook-3397136_960_720.jpg" width="300" height="200"></a>
+				<h3>200521 목요일</h3>
+				<p> 웹페이지 만들기 둘째 날! </p>
+				<ul class="actions">
+					<a href="/blah" class="button">More</a>
+				</ul>
+			</article>
+			<article id="posts3">
+				<a href="/blah"><img src="https://cdn.pixabay.com/photo/2020/04/02/12/28/clef-4994941_960_720.jpg" width="300" height="200"></a>
+				<h3>200522 금요일</h3>
+				<p> 웹페이지 만들기 마지막 날! </p>
+				<ul class="actions">
+					<a href="/blah" class="button">More</a>
+				</ul>
+			</article>
+		</div>
+	</section>
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
+
+
+<div>
+	<header class="main">
+		<center>
+			<h1> news result </h1>
+			<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Daum_communication_logo.svg/1920px-Daum_communication_logo.svg.png" width="600" height="300">
+			<h4> 입력한 keyword에 해당하는 다음 뉴스의 헤드라인 출력 화면입니다. </h4>
+		</center>
+	</header>
+<br>
+	<ul>{% for i in daum_list %}
+		<li>{{ i }}</li>
+		{% endfor %}
+	</ul>
+</div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
+
+
+<div>
+
+  <header class="main">
+    <center>
+      <h1> Horoscope </h1>
+      <img src="https://cdn.pixabay.com/photo/2018/08/08/07/59/southern-hemisphere-3591534_960_720.jpg" width="600" height="400">
+      <h4> 당신의 별자리 운세입니다 </h4><br>
+    </center>
+  </header>
+      <center>
+        <h3>{{ ret_horo }}</h3>
+      </center>
+  <ul>{% for i in ret_horo_list %}
+    <li>{{ i }}</li> <br>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}

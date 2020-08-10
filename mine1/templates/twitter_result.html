@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
+
+
+<div>
+	<header class="main">
+		<center>
+			<h1> twitter result </h1>
+      <img src="https://cdn.pixabay.com/photo/2017/06/22/14/23/twitter-2430933_960_720.png" width="450" height="450">
+			<h4> 입력한 keyword에 해당하는 트위터의 검색 결과입니다. </h4>
+		</center>
+	</header>
+<br>
+	<ul>{% for i in ret_tw_result %}
+		<li>{{ i }}</li><br>
+		{% endfor %}
+	</ul>
+</div>
+{% endblock %}
