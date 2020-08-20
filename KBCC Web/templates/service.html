@@ -6,107 +6,93 @@
 {% block content %}
 
 
-        <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
-            <!-- Content Header (Page header) -->
-            <div class="content-header">
-                <div class="container">
-                    <div class="row mb-2">
-                        <div class="col-sm-6">
-                            <h4 class="m-0 text-dark"> Service </h4>
-                        </div><!-- /.col -->
-                    </div><!-- /.row -->
-                </div><!-- /.container-fluid -->
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <div class="content-header">
+    <div class="container">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h4 class="m-0 text-dark"> Service </h4>
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+
+  <div class="content">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5">
+          <div class="card">
+            <div class="card-header">
+              <h5 class="card-title"> <strong>{{u_data[0][3]}}</strong> </h5>
             </div>
-
-            <!-- /.content-header -->
-
-            <!-- Main content -->
-            <div class="content">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-5">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h5 class="card-title"> <strong>customer pic</strong> </h5>
-                                </div>
-                                <div class="card-body">
-                                    <!-- 여기다가 DB에서 가져올 수 있는 사진 넣으면 됨! -->
-                                    <img src="../static/images/minami.png" width="100%">
-                                </div>
-                            </div>
-                            <!-- /.col -->
-                        </div>
-                        <!-- /.row -->
-                        <div class="col-md-7">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h3 class="card-title"> <strong>방문 통계</strong> </h3>
-                                    <div class="card-tools">
-                                    </div>
-                                </div>
-
-                                <div class="card-body p-4">
-                                    <div class="table-responsive">
-                                        <p class="text-muted text-l" style="text-align:left;">
-                                            방문 날짜
-                                            <span style="float:right;">
-                                                방문 시 주문 내역, 주문 액수 등등
-                                            </span>
-                                        </p>
-                                    </div>
-
-                                    <div class="table-responsive">
-                                        <p class="text-muted text-l" style="text-align:left;">
-                                            This Week
-                                            <span style="float:right;">
-                                                이번 주 매출액
-                                            </span>
-                                        </p>
-                                    </div>
-                                    <!-- /.d-flex -->
-
-                                    <div class="table-responsive">
-                                        <p class="text-muted text-l" style="text-align:left;">
-                                            This Month
-                                            <span style="float:right;">
-                                                이번 달 매출액
-                                            </span>
-                                        </p>
-                                    </div>
-                                    <!-- /.d-flex -->
-                                </div>
-                            </div>
-                            <!-- /.card -->
-                        </div>
-                        <!-- /.col -->
-
-                        <div class="col-md-5">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h3 class="card-title"> <strong>최근 방문일</strong> </h3>
-                                </div>
-
-                                <div class="card-body p-4">
-                                    <div class="table-responsive">
-                                        <p class="text-muted">
-                                            <!-- 여기다가 최근 방문 이력 출력하면 됨!! -->
-                                            1월 1일 <br />
-                                            2월 2일 <br />
-                                            3월 3일
-                                        </p>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <!-- ./card-body -->
-                        </div>
-                        <!-- /.card -->
-                    </div>
-                    <!-- /.col -->
-                </div>
-
+            <div class="card-body">
+              <img id="bg", width="100%" src="{{ url_for('video_feed') }}">
             </div>
+          </div>
         </div>
+        <div class="col-md-7">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title"> <strong>방문 통계</strong> </h3>
+              <div class="card-tools">
+              </div>
+            </div>
+
+            <div class="card-body p-4">
+              <div class="table-responsive">
+                <p class="text-muted text-l" style="text-align:left;">
+                  <strong>&nbsp &nbsp &nbsp &nbsp 방문 날짜</strong> 
+                  <span style="float:right;">
+                    <strong>주문 내역 / 주문 액수</strong>  
+                  </span>
+                </p>
+              </div>
+              <p>
+              </p>
+
+              <div class="table-responsive">
+                <p class="text-l" style="text-align:left;">
+                  {% for u_history in u_data %}
+                  {{u_history[0][:4]}}년 {{u_history[0][5:7]}}월 {{u_history[0][8:]}}일
+                      <span style="float:right;">
+                        {{ u_history[1] }} / {{ u_history[2] }}<br />
+                      </span>
+                      </p>
+                      <p>
+                        <br />
+                  {% endfor %}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-5">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title"> <strong>최근 방문일</strong> </h3>
+            </div>
+
+            <div class="card-body p-4">
+              <div class="table-responsive">
+                <p class="text-muted">
+                  <!-- 여기다가 최근 방문 이력 출력하면 됨!! -->
+                  {% for u_history in u_data[:3] %}
+                      {{u_history[0][:4]}}년 {{u_history[0][5:7]}}월 {{u_history[0][8:]}}일 <br />
+                  {% endfor %}
+                  
+                </p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
 
 {% endblock %}

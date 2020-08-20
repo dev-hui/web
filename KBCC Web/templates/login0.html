@@ -1,0 +1,114 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title> KBCC </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="../static/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../static/css/login-register.css">
+  <script type="text/javascript" src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js"
+    charset="utf-8"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+  <script src="../static/js/jquery.ripples.js"></script>
+
+  <style>
+
+    * { margin: 0;
+        padding: 0;
+        font-family: Nanum Myeongjo;
+        font-size: 2.5vh;
+        font-weight:bold;
+      }
+
+    html {	height: 100%; }
+
+    #wave {
+      background-image: url(../static/images/blue.jpg);
+      background-size: cover;
+      overflow: hidden;
+      height: 100%;
+    }
+
+  </style>  
+
+</head>
+
+<body id="wave">
+
+    <div class="form-wrap">
+      <div class="button-wrap">
+        <div id="btn"></div>
+        <button type="button" class="togglebtn" onclick="login()">LOG IN</button>
+        <button type="button" class="togglebtn" onclick="register()">REGISTER</button>
+      </div>
+
+      <div id="Login-naver">
+        <div id="naverIdLogin"></div>
+        <script type="text/javascript">
+          var naverLogin = new naver.LoginWithNaverId({
+            clientId: "vNSuVbgtAB3fQe92WPVf",
+            callbackUrl: "http://localhost/home",
+            isPopup: false,
+            loginButton: {
+              color: "green",
+              type: 3,
+              height: 40,
+              width: 100
+            }
+          });
+          naverLogin.init();
+        </script>
+        <p>
+          </br>
+        </p>
+      </div>
+
+      <form id="login" action="" class="input-group">
+        <input type="text" class="input-field" placeholder="User Email" required>
+        <input type="password" class="input-field" placeholder="Enter Password" required>
+        <input type="checkbox" class="checkbox-login"><span class="loginspan">Remember Password</span>
+        <button class="submit-login"><a href="/home">Login</a></button>
+      </form>
+      <form id="register" action="" class="input-group">
+        <input type="text" class="input-field" placeholder="User name" required>
+        <input type="email" class="input-field" placeholder="Your Email" required>
+        <input type="password" class="input-field" placeholder="Enter Password" required>
+        <input type="checkbox" class="checkbox"><span class="registerspan">Terms and conditions</span>
+        <button class="submit">REGISTER</button>
+      </form>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+          $(wave).ripples({
+            resolution: 512,
+            dropRadius: 20, //px
+            perturbance: 0.04,
+          });
+      });
+      </script>
+
+
+    <script>
+      var x = document.getElementById("login");
+      var y = document.getElementById("register");
+      var z = document.getElementById("btn");
+
+
+      function login() {
+        x.style.left = "3.45vw";
+        y.style.left = "50vw";
+        z.style.left = "0";
+      }
+
+      function register() {
+        x.style.left = "-100vw";
+        y.style.left = "3.45vw";
+        z.style.left = "8.5vw";
+      }
+    </script>
+
+</body>
+
+</html>
