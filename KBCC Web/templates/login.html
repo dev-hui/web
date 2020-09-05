@@ -36,7 +36,7 @@
 
     .form-wrap-login {
       width: 24vw;
-      height: 65vh;
+      height: 60vh;
       position: relative;
       margin: 10% auto;
       margin-top:0;
@@ -49,9 +49,9 @@
     .button-wrap-login {
       width: 18.5vw;
       height: 6vh;
-      margin-top: 3vh;
+      margin-top: 5vh;
       margin-bottom: 3vh;
-      margin-left: 2.5vw;
+      margin-left: 3vw;
       margin-right: 0;
       position: relative;
       box-shadow: 0 0 10vw 10vh #a8fff6;
@@ -62,6 +62,7 @@
       padding: 0.8vw;
       margin-right: 0.8vw;
       margin-left: 1.2vw;
+      margin-top:0;
       cursor: pointer;
       background: transparent;
       border: 0;
@@ -72,7 +73,7 @@
     }
 
     #btn-loginregister {
-      top: 0;
+      margin-top: 0;
       left: 0;
       right: 0;
       position: absolute;
@@ -84,15 +85,16 @@
     }
 
     .input-group {
-      top: 25vh;
+      top: 23vh;
       position: absolute;
-      width: 280px;
+      margin-left:0;
+      width: 20vw;
       transition: .5s;
     }
 
     .input-field {
       width: 100%;
-      padding: 5%;
+      padding: 4%;
       border: none;
       border-bottom: 1px solid #999;
       outline: none;
@@ -105,7 +107,7 @@
       padding: 1vh;
       cursor: pointer;
       display: block;
-      margin-top: 1vh;
+      margin-top: 3vh;
       margin-left: 1.5vw;
       margin-right:2vw;
       background: linear-gradient(to right, #639aff, #57f7aa);
@@ -119,7 +121,7 @@
       padding: 1vh;
       cursor: pointer;
       display: block;
-      margin-top: 4vh;
+      margin-top: 6vh;
       margin-left: 1.5vw;
       margin-right:2vw;
       background: linear-gradient(to right, #639aff, #57f7aa);
@@ -155,7 +157,7 @@
 
     #login {
       /* left: 50px; */
-      left: 11.5%;
+      left: 9%;
     }
 
     #register {
@@ -198,8 +200,8 @@
     .loginheader {
       color: #fff;
       height: auto;
-      line-height: 5.3vh;
-      text-align: 5.3vh;
+      line-height: 4.2vh;
+      text-align: 4.2vh;
     }
 
     .card-header h3 {
@@ -306,7 +308,7 @@
                     <input type="password" class="input-field" placeholder="Enter Password" required>
                     <input type="password" class="input-field" placeholder="Enter Password Again" required>
                     <label><input type="checkbox" class="checkbox-register">&nbspTerms and conditions</label>
-                    <button class="submit-register">REGISTER</button>
+                    <button class="submit-register"><a href="/home">REGISTER</a></button>
                   </form>
 
               
@@ -335,14 +337,14 @@
 
 
       function login() {
-        x.style.left = "3.45vw";
+        x.style.left = "2vw";
         y.style.left = "50vw";
         z.style.left = "0";
       }
 
       function register() {
         x.style.left = "-100vw";
-        y.style.left = "3.45vw";
+        y.style.left = "2vw";
         z.style.left = "8.5vw";
       }
     </script>
